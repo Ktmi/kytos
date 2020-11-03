@@ -88,6 +88,10 @@ class KytosConfig():
                             action='store_true',
                             help="Create a kytos superuser.")
 
+        parser.add_argument('-z', '--non_interactive',
+                            action='store_true',
+                            help='Run kytos without the interactive terminal')
+
         self.conf_parser, self.parser = conf_parser, parser
         self.parse_args()
 
