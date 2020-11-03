@@ -145,7 +145,7 @@ def async_main(config):
 
     loop.call_soon(controller.start)
 
-    if controller.options.foreground:
+    if controller.options.foreground and not controller.options.non_interactive:
         executor = ThreadPoolExecutor(max_workers=1)
         loop.create_task(start_shell_async())
 
